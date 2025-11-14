@@ -48,7 +48,7 @@ Prompt = PromptTemplate(
 )
 
 # Combine all the tools & chain
-chain = LLMChain(llm, prompt=prompt)
+chain = LLMChain(llm, prompt=Prompt)
 
 reasoning_tool = Tool(
   name = "Reasoning",
@@ -93,3 +93,4 @@ if st.button("Find my Answer"):
   else:
 
     st.warning("Please enter the question")    
+
