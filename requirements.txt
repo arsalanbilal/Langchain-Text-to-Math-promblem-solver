@@ -4,3 +4,4 @@ langchain-groq
 langchain-classic
 openai
 streamlit
+wikipedia
