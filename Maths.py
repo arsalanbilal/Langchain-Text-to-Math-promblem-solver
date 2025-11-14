@@ -84,7 +84,8 @@ if st.button("Find my Answer"):
       st.chat_message("user").write(question)
 
     st_cb = StreamlitCallbackHandler(st.container(), expand_new_thoughts=False)
-    response = assistant_agent.run(st.session_state.messages, callbacks= [st_cb])
+    user_input = st.session_state.messages[-1]["content"]
+    response = assistant_agent.invoke({"input" : user_input}, callbacks= [st_cb])
 
     st.session_state.messages.append({'role' : 'assistant', "content": response})
     st.write('### Response')
@@ -93,6 +94,7 @@ if st.button("Find my Answer"):
   else:
 
     st.warning("Please enter the question")    
+
 
 
 
