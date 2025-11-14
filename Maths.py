@@ -38,17 +38,17 @@ calculator = Tool(
 )
 
 # Prompt
-prompt = """
+prompt_template = """
 Your a agent tasked for solving users mathematical questions. Logically arrive at the solution and display it point wise for the question below:
 Question :{question}
 """
 
-Prompt_template = PromptTemplate(
-  input_variables = ["question"],template = Prompt_template
+Prompt = PromptTemplate(
+  input_variables = ["question"],template = prompt_template
 )
 
 # Combine all the tools & chain
-chain = LLMChain(llm, prompt=Prompt_template)
+chain = LLMChain(llm, prompt=prompt)
 
 reasoning_tool = Tool(
   name = "Reasoning",
@@ -91,4 +91,5 @@ if st.button("Find my Answer"):
     st.success(response)
 
   else:
+
     st.warning("Please enter the question")    
