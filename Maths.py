@@ -18,7 +18,7 @@ if not groq_api_key:
   st.info("Please add your Groq API Key to continue..")
   st.stop()
 
-llm = ChatGroq(model_name="openai/gpt-oss-20b", api_key=groq_api_key)
+llm = ChatGroq(model_name="mixtral-8x7b", api_key=groq_api_key)
 
 # Initializing the tools
 wikipedia_wrapper = WikipediaAPIWrapper()
@@ -93,6 +93,7 @@ if st.button("Find my Answer"):
   else:
 
     st.warning("Please enter the question")    
+
 
 
 
