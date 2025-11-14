@@ -5,3 +5,4 @@ langchain-classic
 openai
 streamlit
 wikipedia
+numexpr
