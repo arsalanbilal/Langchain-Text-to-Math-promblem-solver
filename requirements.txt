@@ -3,4 +3,4 @@ langchain-community
 langchain-groq
 langchain-classic
 openai
-streamli
+streamlit
