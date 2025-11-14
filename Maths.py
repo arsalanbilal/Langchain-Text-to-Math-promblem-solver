@@ -6,7 +6,7 @@ from langchain_classic.prompts import PromptTemplate
 from langchain_community.utilities import WikipediaAPIWrapper, wikipedia
 from langchain_classic.agents.agent_types import AgentType
 from langchain_classic.agents import Tool, initialize_agent
-from langchain_classic.callbacks import StreamlitCallbackHandler
+from langchain_classic.callbacks.streamlit import StreamlitCallbackHandler
 
 # Set up Streamlit app 
 st.set_page_config(page_title="Text to Math Promblem Solver", page_icon="$")
@@ -93,6 +93,7 @@ if st.button("Find my Answer"):
   else:
 
     st.warning("Please enter the question")    
+
 
 
 
